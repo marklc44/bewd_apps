@@ -1,0 +1,28 @@
+<div class="hero-unit">
+	<h1>Welcome to RetFlix</h1>
+	<p>Search for any movie ever made. But we might not have it.</p>
+	<%= form_tag "/", :method => :get, :class => "form-search" do %>
+		<div class="input-append">
+			<!--try html => {:class =>, etc.} -->
+			<%= text_field_tag :q, params[:q], {:class => "span2 search-query"}  %>
+			<%= submit_tag "Find a movie", :class => "btn" %>
+<br>
+		</div>
+	<% end %>
+</div><!--end hero-->
+<div>
+	<ul class="results-list">
+		<% @movies.each do |movie| %>
+			<li class="result">
+				<img src="<%= movie.poster %>">
+				<h3><a href="<%= movie_path(movie) %>"><%= movie.title %></a></h3>
+				<div class="details">
+					<p><%= movie.description %></p>
+					<p class="year-released"><%= movie.year_released %></p>
+				</div>
+				<a class="btn" href="<%= edit_movie_path(movie) %>">Edit Movie</a>
+				<a class="btn btn-primary" href="<%= movie_path(movie) %>">See details <i class="icon-chevron-right"></i></a>
+			</li>
+		<% end %>
+	</ul>
+</div><!--end results-->

@@ -1,0 +1,39 @@
+// Place all the styles related to the main controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+div.container {
+	text-align:center;
+	background:#eee;
+	height:100%;
+}
+div.row {
+	margin-top:2em; 
+}
+h3.game-title {
+	font-size:1.25em;
+	font-weight:normal;
+}
+.nav {
+	background:#666;
+	padding:.25em 1em;
+}
+.nav a {
+	color:#fff;
+}
+.nav a:hover {
+	color:#666;
+}
+.nav .navbar-brand {
+	font-size:1.25em;
+}
+.justified {
+	text-align:left;
+}
+.secret_numbers.index img {
+	outline:none;
+	border:none;
+}
+.secret_numbers.index img:hover {
+	border:1px solid red;
+}

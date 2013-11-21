@@ -1,0 +1,17 @@
+	<div class="row-fluid">
+		<div class="span12">
+			<h1>Welcome to Secret Numbers!</h1>
+			<p>To play this game, all you have to do is guess a number. If you guess the secret number, you win!</p>
+			<p>Choose carefully...you only get one try!</p>
+		</div><!--end span12-->
+	</div><!--end row-->
+
+	<div class="row-fluid">
+		<div class="span12">
+			<h2>Pick a Number:</h2>
+			<% (1..5).each do |number| %>
+				<a href="<%= secret_number_path(number) %>"><img src="<%= image_path("secret_numbers/#{number}.jpeg") %>"></a>
+			<% end %>
+		</div><!--end span12-->
+	</div><!--end row-->
+</div><!--end continer-->

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GamesOnRails</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body class="<%= params[:controller] %> <%= params[:action] %>">
+	<div class="container">
+		<ul class="nav nav-pills">
+			<li><a class="navbar-brand" href="<%= root_path %>">GameCenter</a></li>
+			<li
+				<% if params[:controller] == "main" and params[:action] == "about" %>
+				class="active" 
+				<% end %>>
+				<a href="<%= about_path %>">About Us</a>
+			</li>
+			<li
+				<% if params[:controller] == "main" and params[:action] == "about" %>
+				class="active" 
+				<% end %>>
+				<a href="<%= how_it_works_path %>">How It Works</a>
+			</li>
+		</ul>
+
+		<%= yield %>
+	</div>
+
+</body>
+</html>

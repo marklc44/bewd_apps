@@ -1,0 +1,14 @@
+
+
+<p>The user chose <%= @chosenNumber %></p>
+<p>The secret number was <%= @secretNumber %></p>
+
+<% if @chosenNumber == @secretNumber %>
+<h2>You won! Nice guess</h2>
+<%= image_tag("cat-wins.gif") %>
+<p><a href="<%= secret_numbers_path %>">Play again &raquo;</a></p>
+<% else %>
+<h2>You lost. Sorry</h2>
+<%= image_tag("loser.gif") %>
+<p><a href="<%= secret_numbers_path %>">Try again &raquo;</a></p>
+<% end %>

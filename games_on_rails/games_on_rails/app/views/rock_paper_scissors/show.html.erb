@@ -1,0 +1,32 @@
+<div class="row">
+	<div class="span4 offset2">
+		<p>You threw:</p>
+		<img src="<%= image_path("rock_paper_scissors/#{@player_played}.jpeg") %>">
+		<h3><%= @player_played %></h3>
+	</div>
+	<div class="span4">
+		<p>Rails threw:</p>
+		<img src="<%= image_path("rock_paper_scissors/#{@computer_played}.jpeg") %>">
+		<h3><%= @computer_played %></h3>
+	</div>
+
+</div><!--end row-->
+
+<div class="row">
+	<div class="span12">
+		<% if @result == "tie" %>
+			<p>It's a tie!</p>
+			<img src="<%= image_path("tie.jpg") %> ">
+			<p><a href="<%= rock_paper_scissors_path %>">Play again.</a></p>
+		<% elsif @result == "win" %>
+			<p>You win!</p>
+			<img src="<%= image_path("winner.gif") %> ">
+			<p><a href="<%= rock_paper_scissors_path %>">Play again.</a></p>
+		<% elsif @result == "lose" %>
+			<p>You lose!</p>
+			<img src="<%= image_path("loser.gif") %> ">
+			<p><a href="<%= rock_paper_scissors_path %>">Try again.</a></p>
+		<% end %>
+	</div>
+	<p><%= @outcome %></p>
+</div><!--end row-->

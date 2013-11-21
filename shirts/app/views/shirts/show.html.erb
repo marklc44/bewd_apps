@@ -1,0 +1,7 @@
+<h1><%= @shirt.name %></h1>
+<p><%= @shirt.description %></p>
+<img src="<%= image_path(@shirt.image) %>">
+<a href="<%= edit_shirt_path(@shirt) %>">Edit shirt</a>
+
+<%= button_to "Delete Shirt", shirt_path(@shirt), :method => :delete %>
+

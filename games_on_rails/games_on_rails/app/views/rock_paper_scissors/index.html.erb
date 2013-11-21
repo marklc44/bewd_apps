@@ -1,0 +1,21 @@
+<div class="row">
+	<div class="span12">
+		<h1>Welcome to Rock Paper Scissors!</h1>
+		<p>To play the game, chosse a throw:</p>
+	</div>
+</div><!--end row-->
+<div class="row">
+	<div class="span4">
+		<a href="<%= rock_paper_scissor_path("#{@weapons[0]}") %>"><img src="<%= image_path("rock_paper_scissors/#{@weapons[0]}.jpeg") %>">
+		<h3><%= @weapons[0].capitalize %></h3></a>
+	</div>
+	<div class="span4">
+		<a href="<%= rock_paper_scissor_path("#{@weapons[1]}") %>"><img src="<%= image_path("rock_paper_scissors/#{@weapons[1]}.jpeg") %>">
+		<h3><%= @weapons[1].capitalize %></h3></a>
+	</div>
+	<div class="span4">
+		<a href="<%= rock_paper_scissor_path("#{@weapons[2]}") %>"><img src="<%= image_path("rock_paper_scissors/#{@weapons[2]}.jpeg") %>">
+		<h3><%= @weapons[2].capitalize %></h3></a>
+	</div>
+</div><!--end row-->
+

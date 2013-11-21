@@ -1,0 +1,15 @@
+<%= form_for @shirt do |f| %>
+	<div>
+		<%= f.label :name, "Name of shirt" %>
+		<%= f.text_field :name %>
+	</div>
+	<div>
+		<%= f.label :description, "Description" %>
+		<%= f.text_field :description %>
+	</div>
+	<div>
+		<%= f.label :image, "Image Filename" %>
+		<%= f.text_field :image %>
+	</div>
+	<%= f.submit "Create shirt" %>
+<% end %>

@@ -1,0 +1,9 @@
+<%= form_for @movie do |f| %>
+	<%= f.label :title, "Title" %>
+	<%= f.text_field :title %>
+	<%= f.label :description, "Description" %>
+	<%= f.text_field :description %>
+	<%= f.label :year_released, "Year Released" %>
+	<%= f.text_field :year_released %>
+	<%= f.submit "Save movie", {:class =>"btn"} %>
+<% end %>
