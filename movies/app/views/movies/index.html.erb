@@ -14,7 +14,6 @@
 	<ul class="results-list">
 		<% @movies.each do |movie| %>
 			<li class="result">
-				<img src="<%= movie.poster %>">
 				<h3><a href="<%= movie_path(movie) %>"><%= movie.title %></a></h3>
 				<div class="details">
 					<p><%= movie.description %></p>

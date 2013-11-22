@@ -17,16 +17,7 @@
 }
 .index .hero-unit {
 	background:url(dark-knight.jpg) no-repeat;
-	background-size:cover;
-	color:#fff;
-	margin-bottom:0;
-	-webkit-border-radius:0;
-	-moz-border-radius:0;
-	border-radius:0;
 	height:110px;
-	overflow:hidden;
-	text-shadow:4px 4px 12px #0c0f22;
-	border-bottom:10px solid #0c0f22;
 }
 
 ul.results-list {
@@ -77,3 +68,9 @@ ul.results-list {
 	border-radius:0;
 }
 
+.show form {
+	display:inline-block;
+}
+.show .btn {
+	margin-right:4%;
+}

@@ -3,12 +3,16 @@
 	<div class="row-fluid">
 		<div class="span3 offset4">
 			<h1><%= @movie.title %></h1>
-			<img src="<%= @movie.poster %>">
 			<p><%= @movie.description %></p>
 			<p><% @movie.year_released %></p>
-			<a href="<%= edit_movie_path(@movie) %>"><i class="eye-icon-open"></i> Edit Movie</a>
+			<a class="btn" href="<%= edit_movie_path(@movie) %>"><i class="eye-icon-open"></i> Edit Movie</a>
 
 			<%= button_to "Delete Movie", movie_path(@movie), :method => :delete, :class => "btn btn-danger" %>
+		</div><!--end span-->
+	</div><!--end row-->
+	<div class="row-fluid">
+		<div class="span3 offset4 nav-controls">
+			<a href="#">Back to search results</a>
 		</div><!--end span-->
 	</div><!--end row-->
 </div><!--end container-->
