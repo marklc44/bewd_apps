@@ -9,13 +9,21 @@
 <body class="<%= params[:action] %>">
 	<div class="navbar">
 	  <div class="navbar-inner">
-	    <a class="brand" href="#">RetFlix</a>
+	    <a class="brand" href="<%= root_path %>">RetFlix</a>
 	    <ul class="nav">
 	      <li class="active"><a href="<%= root_path %>">Home</a></li>
 	      <li><a href="<%= new_movie_path %>">+ Add a movie</a></li>
 	    </ul>
+	    <% if user_signed_in? %>
+	    <p class="pull-right" style="margin-top:.5em">Hi, <%= current_user.email%> | <%= link_to "Log Out", destroy_user_session_path, :method => :delete %></p>
+	    <% else %>
+	    <a class="btn btn-primary pull-right" href="<%= new_user_registration_path %>">Sign Up</a>
+	    <a class="btn pull-right" href="<%= new_user_session_path %>">Login</a>
+	    <% end %>
 	  </div>
 	</div>
+
+	<%= bootstrap_flash %>
 
 <%= yield %>
 

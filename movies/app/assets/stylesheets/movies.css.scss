@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .hero-unit {
-	background:url(dark-knight.jpg) no-repeat;
+	background-image:url(asset_path('dark-knight.jpg'));
 	background-size:cover;
 	color:#fff;
 	margin-bottom:0;
@@ -16,7 +16,6 @@
 	border-bottom:10px solid #0c0f22;
 }
 .index .hero-unit {
-	background:url(dark-knight.jpg) no-repeat;
 	height:110px;
 }
 
@@ -73,4 +72,7 @@ ul.results-list {
 }
 .show .btn {
 	margin-right:4%;
+}
+.navbar .btn {
+	margin-left:1em;
 }

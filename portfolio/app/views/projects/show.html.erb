@@ -1,0 +1,20 @@
+<%= render "main/hero" %>
+<div class="container-fluid">
+	<div class="row-fluid">
+		<div class="span3 offset4 <%= @project.category %>" data-featured="<%= @project.featured %>">
+			<div class="cat-tab"><%= @project.category %></div>
+			<img src="<%= image_path(@project.main_image) %>">
+			<h4><%= @project.title %></h4>
+			<p><%= @project.description %></p>
+			<p class="tags"><strong>Tags:</strong> <%= @project.tags %></p>
+			<div id="project-tn" class="container-fluid">
+				<% if @project.tn_images %>
+					<% @project.tn_images.each do |tn| %>
+						<img class="span3" src="<%= tn %>">
+					<% end %>
+				<% end %>
+			</div><!-- end project thumbnails-->
+			<a class="btn" href="<%= projects_path %>"><i class="icon-chevron-left"></i> Back to all projects</a>
+		</div>
+	</div>	
+</div><!--end container-->

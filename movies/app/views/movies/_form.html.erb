@@ -1,3 +1,15 @@
+<% if @movie.errors.any? %>
+	<div class="error">
+		<ul>
+			<% @movie.errors.full_messages.each do |msg| %>
+			<li><%= msg %></li>
+			<% end %>
+		</ul>
+	</div>
+<% end %>
+
+
+
 <%= form_for @movie do |f| %>
 	<%= f.label :title, "Title" %>
 	<%= f.text_field :title %>

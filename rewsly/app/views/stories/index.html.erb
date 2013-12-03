@@ -1,0 +1,18 @@
+<div class="hero-unit">
+	<h1>Your source for newsy hotness</h1>
+	<%= form_tag "/", :method => :get, :class => "form-search" do %>
+		<%= text_field_tag :q, params[:q], {:class => "span2 search-query"} %>
+		<%= submit_tag "Find a story", :class => "btn" %>
+	<% end %>
+</div>
+<div class="container-fluid">
+	<ul>
+	<% @stories.each do |story| %>
+		<li>
+			<h3><a href="<%= story.link %>"><%= story.title %></a></h3>
+			<p><%= story.category %> (Upvotes: <%= story.upvotes %>)</p>
+			<a class="btn" href="<%= edit_story_path(story) %>"><i class="icon-edit"></i> Edit Story</a>
+		</li>
+	<% end %>
+	</ul>
+</div><!--end container-->

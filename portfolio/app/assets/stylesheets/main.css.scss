@@ -1,0 +1,48 @@
+// Place all the styles related to the main controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* vendor prefix mixin */
+@mixin vendor-prefix($name, $argument) {
+  -webkit-#{$name}: #{$argument};
+  -ms-#{$name}: #{$argument};
+  -moz-#{$name}: #{$argument};
+  -o-#{$name}: #{$argument};
+  #{$name}: #{$argument};
+}
+
+.hero-unit {
+	margin-bottom:0;
+}
+.navbar {
+	margin-bottom:0;
+	
+}
+.navbar-inner {
+	@include vendor-prefix(border-radius, 0)
+}
+/* index section heroes */
+.index .hero-unit.about {
+	
+}
+.index .hero-unit.projects {
+	
+}
+.index .hero-unit.posts {
+	
+}
+.index .hero-unit.contact {
+	
+}
+/* page specific heroes */
+.about .hero-unit {
+	
+}
+.contact .hero-unit {
+	
+}
+
+footer {
+	height:3em;
+	background:rgb(153, 50, 204);
+}

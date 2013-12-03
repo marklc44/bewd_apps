@@ -1,0 +1,11 @@
+<ul>
+	<% @projects.each do |project| %>
+	<li class="<%= project.category %>" data-featured="<%= project.featured %>">
+		<div class="cat-tab"><%= project.category %></div>
+		<img src="<%= image_path(project.main_image) %>">
+		<h4><a href="<%= project_path(project) %>"><%= project.title %></a></h4>
+		<p><%= project.description %></p>
+		<p class="tags"><%= project.tags %></p>
+	</li>
+	<% end %>
+</ul>

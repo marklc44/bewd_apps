@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Portfolio</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body class="<%= params[:action] %>">
+	<div class="navbar">
+	  <div class="navbar-inner">
+	    <a class="brand" href="<%= root_path %>">Mark Centoni</a>
+	    <ul class="nav">
+	      <li><a href="<%= main_about_path %>">About</a></li>
+	      <li><a href="<%= projects_path %>">Projects</a></li>
+	      <li><a href="#">Blog</a></li>
+	      <li><a href="<%= main_contact_path %>">Contact</a></li>
+	    </ul>
+	  </div>
+	</div>
+
+	<div class="content-wrapper">
+		<%= yield %>
+	</div><!--end content-wrapper-->
+	
+	<footer></footer>
+</body>
+</html>

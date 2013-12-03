@@ -1,4 +1,9 @@
 class MoviesController < ApplicationController
+
+	# :only protects action that shows form and posts form :new, :create
+	# so devise doesn't try to authenticate before showing home page
+	before_action :authenticate_user!, :only => [:new, :create]
+
 	def index
 		if params[:q].present?
 			@movies = Movie.search_for(params[:q])
@@ -16,8 +21,13 @@ class MoviesController < ApplicationController
 		@movie = Movie.new(safe_movie_params)
 		logger.info(@movie.inspect)
 
-		@movie.save
-		redirect_to root_path
+		if @movie.save
+			redirect_to root_path
+		else
+			# will render form again with any field values still intact
+			render :new
+		end
+		
 	end
 
 	def show

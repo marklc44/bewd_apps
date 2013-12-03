@@ -1,0 +1,12 @@
+<%= render "main/hero" %>
+<!-- submenu for filtering, not functional yet -->
+<div id="filters">
+	<%= form_tag "/", :method => :get do %>
+	<ul class="nav nav-pills">	
+		<% @cats.each do |cat| %>
+		<li><a href="#"><%= cat %></a><%= hidden_field_tag :filter, cat %></li>
+		<% end %>
+	</ul>
+	<% end %>
+</div>
+<%= render "main/project_results" %>
