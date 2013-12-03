@@ -19,7 +19,20 @@
 	
 }
 .navbar-inner {
+	background-color:#474747;
+	background-image:none;
 	@include vendor-prefix(border-radius, 0)
+}
+.navbar .nav > li > a, .navbar .brand {
+	color:#fff;
+	text-shadow:0 1px 0 #777;
+}
+.navbar .nav > li > a:hover {
+	background:#555;
+	color:#fff;
+}
+.navbar .brand {
+	border-right:1px solid #555;
 }
 /* index section heroes */
 .index .hero-unit.about {

@@ -14,4 +14,7 @@ class MainController < ApplicationController
 		@page_title = "Let's chat"
 		@subtitle = "Blah."
 	end
+	def login
+		@page_title = "Login to the admin area"
+	end
 end

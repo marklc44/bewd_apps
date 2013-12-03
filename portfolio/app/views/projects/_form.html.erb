@@ -1,0 +1,17 @@
+<%= form_for @project do |f| %>
+	<%= f.label :title, "Title" %>
+	<%= f.text_field :title %>
+	<%= f.label :description, "Description" %>
+	<%= f.text_field :description %>
+	<%= f.label :category, "Category" %>
+	<%= f.text_field :category %>
+	<%= f.label :main_image, "Primary Image" %>
+	<%= f.text_field :main_image %>
+	<%= f.label :tn_images, "Thumbnails" %>
+	<%= f.text_field :tn_images %>
+	<%= f.label :tags, "Tags" %>
+	<%= f.text_field :tags %>
+	<%= f.label :featured, "Featured on homepage" %>	
+	<%= f.check_box :featured %>
+	<%= f.submit "Save project", {:class =>"btn"} %>	
+<% end %>

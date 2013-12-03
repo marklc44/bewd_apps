@@ -1,12 +1,13 @@
 Portfolio::Application.routes.draw do
 
+  devise_for :users
   root "main#index"
   get "main/about"
   get "main/contact"
+  get "main/login"
 
   resources :projects
   resources :posts
-  resources :admins
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

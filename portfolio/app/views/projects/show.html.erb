@@ -14,6 +14,10 @@
 					<% end %>
 				<% end %>
 			</div><!-- end project thumbnails-->
+			<% if user_signed_in? %>
+				<a class="btn" href="<%= edit_project_path(@project) %>"><i class="eye-icon-open"></i> Edit Project</a>
+				<%= button_to "Delete Project", project_path(@project), :method => :delete, :class => "btn btn-danger" %>
+			<% end %>
 			<a class="btn" href="<%= projects_path %>"><i class="icon-chevron-left"></i> Back to all projects</a>
 		</div>
 	</div>	
