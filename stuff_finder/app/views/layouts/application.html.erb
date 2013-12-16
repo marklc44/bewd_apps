@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>StuffFinder</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<div class="navbar">
+	  <div class="navbar-inner">
+	    <a class="brand" href="<%= root_path %>">StuffFinder</a>
+	    <ul class="nav">
+	      <li><a href="<%= classifieds_path %>">Browse Classifieds</a></li>
+	      <li><a href="<%= new_classified_path %>">Post a Classified</a></li>
+	    </ul>
+	    <div style="float: right;">
+		  <% if user_signed_in? %>
+		    Hi, <%= current_user.email %>
+		    <%= link_to "Log Out", destroy_user_session_path, :method => :delete %>
+		  <% else %>
+		    <a href="<%= new_user_session_path %>">Log In</a>
+		    <a class="btn" href="<%= new_user_registration_path %>">Sign Up</a>
+		  <% end %>
+		</div>
+	  </div>
+	</div>
+	<%= bootstrap_flash %>
+
+<%= yield %>
+
+</body>
+</html>

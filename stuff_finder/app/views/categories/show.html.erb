@@ -1,0 +1,16 @@
+<div class="container-fluid">
+	<div class="row-fluid">
+		<h1><%= @category.name %></h1>
+		<div class="span8">	
+			<ul class="nav nav-list">
+				<% @classifieds.each do |classified| %>
+				<section class="well well-small">
+					<li class="nav-header">
+						<a href="<%= classified_path(classified) %>"><%= classified.title %> - <%= classified.price %></a>
+					</li>
+				</section>
+				<% end %>
+			</ul>	
+		</div><!--end span-->
+	</div><!--end row-->
+</div><!--end container-->

@@ -1,0 +1,14 @@
+<%= form_for @classified do |f| %>
+	<%= f.label :category %>
+	<%= text_field_tag :category, "", :data => {:provide => "typeahead", :source => @categories}, :autocomplete => "off" %>
+	<%= f.label :title, "Title" %>
+	<%= f.text_field :title %>
+	<%= f.label :description, "Description" %>
+	<%= f.text_area :description %>
+	<%= f.label :price, "Price" %>
+	<%= f.number_field :price %>
+	<%= f.label :image, "Upload an image" %>
+	<%= f.file_field :image %>
+	<br>
+	<%= f.submit "Post classified", {:class => "btn"} %>
+<% end %>

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  uri: MyText
+  tn_uri: MyText
+  project_id: 1
+
+two:
+  title: MyString
+  uri: MyText
+  tn_uri: MyText
+  project_id: 1

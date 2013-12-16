@@ -1,0 +1,20 @@
+<div class="container-fluid">
+	<h1>Show</h1>
+		<h1><%= @classified.title %> - <%= @classified.price %></h1>
+		<a href="<%= category_path(Category.find(@classified.category_id).id) %>"><%= Category.find(@classified.category_id).name %></a>
+		<a class="btn btn-primary" href="mailto:<%= User.find(@classified.user).email %>?subject=StuffFinder%20-%20Meow">Contact Seller</a></h4>
+		<h4>Seller: <%= User.find(@classified.user).email %></h4>
+
+		<h4>Description:</h4>
+		<section class="well well-small">
+		  <div>
+		    <p class="lead"><%= @classified.description %></p>
+		  </div>
+		</section>
+		<% if @classified.image.present? %>
+			<h4>Image:</h4>
+			<div>
+			  <img src="<%= @classified.image.url %>"/>
+			</div>
+		<% end %>
+</div><!--end container-->

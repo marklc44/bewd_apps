@@ -11,18 +11,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131203035347) do
+ActiveRecord::Schema.define(version: 20131204164649) do
+
+  create_table "images", force: true do |t|
+    t.string   "title"
+    t.text     "uri"
+    t.text     "tn_uri"
+    t.integer  "project_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "projects", force: true do |t|
     t.string   "title"
     t.text     "description"
     t.text     "category"
-    t.string   "main_image"
-    t.text     "tn_images"
+    t.integer  "main_image",  limit: 255
+    t.integer  "tn_images"
     t.text     "tags"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "featured"
+  end
+
+  create_table "thumbnails", force: true do |t|
+    t.integer  "project_id"
+    t.integer  "image_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|

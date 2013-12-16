@@ -3,7 +3,6 @@ class ProjectsController < ApplicationController
 
 	def index
 		@page_title = "Projects"
-
 		@cats = Project.get_filters
 
 		if params[:filter].present?
@@ -11,6 +10,7 @@ class ProjectsController < ApplicationController
 		else
 			@projects = Project.all
 		end
+		
 	end
 
 	def new
@@ -37,7 +37,9 @@ class ProjectsController < ApplicationController
 	def show	
 		@project = Project.find(params[:id])
 		@page_title = "Projects"
-		@subtitle = @project.title 
+		@subtitle = @project.title
+		@main_image = Image.find(@project.main_image)
+		@tn_image = Image.find(Thumbnail.find(@project.tn_images))
 	end
 
 	def update

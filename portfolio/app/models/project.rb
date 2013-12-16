@@ -1,6 +1,9 @@
 class Project < ActiveRecord::Base
 	validates :title, :description, presence:true
 
+	has_many :images
+	has_many :thumbnails
+
 	def self.search_for(query)
 		Project.where("title LIKE :query OR description LIKE :query OR category LIKE :query OR tag LIKE :query ORDER BY category ASC", :query => "%#{query}%")
 	end
